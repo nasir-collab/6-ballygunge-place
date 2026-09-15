@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 Ballygunge Place - WhatsApp CRM Console</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div style="width: 38px; height: 38px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 12px; border-radius: 6px; background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);">
+          <i class="fa-solid fa-utensils" style="color: #DAA520; font-size: 18px;"></i>
+        </div>
+        <div class="brand-info">
+          <h2>6 Ballygunge Place</h2>
+          <span>B2C Console</span>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active" data-tab="dashboard">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="inbox">
+          <i class="fa-solid fa-comments"></i>
+          <span>Unified Inbox</span>
+          <span class="badge badge-unread" id="inbox-unread-count">2</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="outlets">
+          <i class="fa-solid fa-store"></i>
+          <span>Outlet Collections</span>
+          <span class="badge badge-outlets" id="outlets-badge" style="background: rgba(16, 185, 129, 0.15); color: #10B981; font-weight: 700; font-size: 11px; padding: 2px 7px; border-radius: 10px;">6 Branches</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="catalog">
+          <i class="fa-solid fa-box-archive"></i>
+          <span>Catalog Sync</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="campaigns">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Campaigns</span>
+        </a>
+        <a href="#" class="nav-item" data-tab="settings">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+      
+      <div class="user-profile">
+        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=120&auto=format&fit=crop&q=80" alt="Joydeep Sen" class="avatar">
+        <div class="user-info">
+          <span class="user-name">Joydeep Sen</span>
+          <span class="user-role">Restaurant Manager</span>
+        </div>
+        <i class="fa-solid fa-right-from-bracket logout-btn"></i>
+      </div>
+    </aside>
+    
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- TOP NAVIGATION BAR -->
+      <header class="top-nav">
+        <div class="page-title">
+          <h1 id="current-tab-title">Dashboard Overview</h1>
+          <p id="current-tab-desc">Real-time conversational sales performance metrics.</p>
+        </div>
+        <div class="top-actions">
+          <!-- Global Branch Switcher -->
+          <div class="outlet-filter-wrapper" style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 7px 12px;">
+            <i class="fa-solid fa-store" style="color: var(--primary-color); font-size: 14px;"></i>
+            <select id="global-outlet-select" style="background: transparent; border: none; color: var(--text-main); font-family: var(--font-family-body); font-size: 13px; font-weight: 600; outline: none; cursor: pointer;">
+              <option value="all" style="background: var(--bg-card); color: var(--text-main);">All 6 Branches (Consolidated 6BP)</option>
+              <option value="outlet_ballygunge" style="background: var(--bg-card); color: var(--text-main);">Ballygunge Flagship</option>
+              <option value="outlet_saltlake" style="background: var(--bg-card); color: var(--text-main);">Salt Lake (Sector V)</option>
+              <option value="outlet_parkstreet" style="background: var(--bg-card); color: var(--text-main);">Park Street</option>
+              <option value="outlet_southcity" style="background: var(--bg-card); color: var(--text-main);">South City Mall</option>
+              <option value="outlet_newtown" style="background: var(--bg-card); color: var(--text-main);">New Town</option>
+              <option value="outlet_whatsapp" style="background: var(--bg-card); color: var(--text-main);">WhatsApp Direct Hub</option>
+            </select>
+          </div>
+          
+          <a href="landing.html" target="_blank" class="btn btn-secondary" style="text-decoration: none;">
+            <i class="fa-solid fa-rectangle-ad"></i> View Promo Page
+          </a>
+          <div class="sync-status">
+            <span class="status-indicator online"></span>
+            <span style="font-weight: 600;">WABA: +91 9007378887</span>
+          </div>
+          <button class="btn btn-primary" id="btn-quick-broadcast">
+            <i class="fa-solid fa-plus"></i> New Campaign
+          </button>
+        </div>
+      </header>
+      
+      <!-- DYNAMIC CONTENT CONTAINERS -->
+      <div class="content-body">
+        
+        <!-- 1. DASHBOARD VIEW -->
+        <section id="tab-dashboard" class="tab-panel active">
+          <!-- Stat Cards Grid -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Total Sales (WhatsApp)</span>
+                <span class="stat-icon-wrapper sales"><i class="fa-solid fa-wallet"></i></span>
+              </div>
+              <div class="stat-value" id="dashboard-sales">₹1,48,200.00</div>
+              <div class="stat-footer">
+                <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12.4%</span>
+                <span class="duration">vs. last week</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Conversion Rate</span>
+                <span class="stat-icon-wrapper conversion"><i class="fa-solid fa-bullseye"></i></span>
+              </div>
+              <div class="stat-value" id="dashboard-conversion">4.8%</div>
+              <div class="stat-footer">
+                <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +0.6%</span>
+                <span class="duration">conversational checkout</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Active Sessions</span>
+                <span class="stat-icon-wrapper sessions"><i class="fa-solid fa-users"></i></span>
+              </div>
+              <div class="stat-value" id="dashboard-sessions">84</div>
+              <div class="stat-footer">
+                <span class="trend neutral"><i class="fa-solid fa-minus"></i> Stable</span>
+                <span class="duration">currently in chatbot flow</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Avg Response Time</span>
+                <span class="stat-icon-wrapper response"><i class="fa-solid fa-bolt"></i></span>
+              </div>
+              <div class="stat-value">28s</div>
+              <div class="stat-footer">
+                <span class="trend positive"><i class="fa-solid fa-arrow-trend-down"></i> -14%</span>
+                <span class="duration">bot & agent routing</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- ✨ AI Executive Intelligence Daily Briefing -->
+          <div class="ai-briefing-card" id="ai-briefing-widget">
+            <div class="ai-briefing-header">
+              <div class="ai-title-wrap">
+                <div class="ai-sparkle-icon">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div>
+                  <div class="ai-badge-header">
+                    <span class="ai-pill-tag"><i class="fa-solid fa-brain"></i> Gemini AI Executive Intelligence</span>
+                    <span class="ai-pulse-dot"></span>
+                    <span class="ai-briefing-time" id="ai-briefing-time">Live Analysis</span>
+                  </div>
+                  <h3 id="ai-briefing-headline" class="ai-briefing-headline">Consolidated Outlets Daily Revenue: ₹6,88,400 (104.3% of Target)</h3>
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-small" id="btn-refresh-ai-briefing" title="Re-analyze CRM & Outlets">
+                <i class="fa-solid fa-arrows-rotate"></i> Refresh AI Insights
+              </button>
+            </div>
+            
+            <div class="ai-briefing-content">
+              <div class="ai-insight-box">
+                <div class="ai-insight-label"><i class="fa-solid fa-chart-line"></i> Revenue Pulse</div>
+                <p id="ai-briefing-pulse">Strong weekend footfall across all 6 Kolkata outlets. Digital payments dominate with 69.2% adoption (UPI + POS Cards). Cash reconciliation has zero detected shortages.</p>
+              </div>
+              
+              <div class="ai-insight-box">
+                <div class="ai-insight-label"><i class="fa-solid fa-trophy text-gold"></i> Top Outlet Highlight</div>
+                <p id="ai-briefing-top">Ballygunge Flagship generated ₹1,55,800, leading in dine-in thali volume. Salt Lake Sector V experienced 34% corporate lunch uplift.</p>
+              </div>
+              
+              <div class="ai-insight-box opportunity">
+                <div class="ai-insight-label"><i class="fa-solid fa-lightbulb text-amber"></i> AI Proactive Recommendation</div>
+                <p id="ai-briefing-opp">18 active carts are pending on WhatsApp from New Town & South City areas. Releasing an automated 15% dinner voucher is projected to capture an incremental ₹24,000 before 11:00 PM.</p>
+                <button class="btn btn-ai-action" id="btn-ai-trigger-action">
+                  <i class="fa-solid fa-bolt"></i> Broadcast Dinner Offer (1-Click)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Section -->
+          <div class="dashboard-charts">
+            <div class="chart-card">
+              <h3>Sales Trend</h3>
+              <div class="chart-container">
+                <!-- SVG Chart Mock -->
+                <svg viewBox="0 0 500 200" class="svg-chart">
+                  <defs>
+                    <linearGradient id="salesGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="var(--primary-color)" stop-opacity="0.3"/>
+                      <stop offset="100%" stop-color="var(--primary-color)" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M 0 150 Q 80 120 160 140 T 320 80 T 480 30" fill="none" stroke="var(--primary-color)" stroke-width="4"></path>
+                  <path d="M 0 150 Q 80 120 160 140 T 320 80 T 480 30 L 480 200 L 0 200 Z" fill="url(#salesGrad)"></path>
+                  <!-- Data points -->
+                  <circle cx="160" cy="140" r="6" fill="var(--primary-color)"></circle>
+                  <circle cx="320" cy="80" r="6" fill="var(--primary-color)"></circle>
+                  <circle cx="480" cy="30" r="6" fill="var(--primary-color)"></circle>
+                </svg>
+                <div class="chart-labels">
+                  <span>Mon</span>
+                  <span>Tue</span>
+                  <span>Wed</span>
+                  <span>Thu</span>
+                  <span>Fri</span>
+                  <span>Sat</span>
+                  <span>Sun</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="chart-card">
+              <h3>Active Funnel (User Stages)</h3>
+              <div class="funnel-container">
+                <div class="funnel-stage">
+                  <span class="stage-name">Catalog Viewed</span>
+                  <div class="stage-bar" style="width: 100%;">
+                    <span class="stage-value">412 users</span>
+                  </div>
+                </div>
+                <div class="funnel-stage">
+                  <span class="stage-name">Added to Cart</span>
+                  <div class="stage-bar" style="width: 62%;">
+                    <span class="stage-value">256 users</span>
+                  </div>
+                </div>
+                <div class="funnel-stage">
+                  <span class="stage-name">Checkout Started</span>
+                  <div class="stage-bar" style="width: 38%;">
+                    <span class="stage-value">158 users</span>
+                  </div>
+                </div>
+                <div class="funnel-stage">
+                  <span class="stage-name">Orders Completed</span>
+                  <div class="stage-bar" style="width: 18%;">
+                    <span class="stage-value">74 users</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Recent Transactions -->
+          <div class="recent-orders-card">
+            <div class="card-header">
+              <h3>Recent Conversational Orders</h3>
+              <a href="#" class="view-all-link">View All</a>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Products</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody id="recent-orders-tbody">
+                <tr>
+                  <td>#W-3916</td>
+                  <td>Anirban Chatterjee</td>
+                  <td>Daab Chingri × 2</td>
+                  <td><span class="status-badge paid">Paid</span></td>
+                  <td>₹1290.00</td>
+                  <td><i class="fa-solid fa-robot bot-icon"></i> Chatbot</td>
+                </tr>
+                <tr>
+                  <td>#W-9841</td>
+                  <td>Priyanka Sen</td>
+                  <td>Kosha Mangsho × 1</td>
+                  <td><span class="status-badge pending">Pending</span></td>
+                  <td>₹595.00</td>
+                  <td><i class="fa-solid fa-user-tie agent-icon"></i> Agent</td>
+                </tr>
+                <tr>
+                  <td>#W-9840</td>
+                  <td>Rahul Banerjee</td>
+                  <td>Bhapa Ilish × 3</td>
+                  <td><span class="status-badge shipped">Shipped</span></td>
+                  <td>₹2175.00</td>
+                  <td><i class="fa-solid fa-robot bot-icon"></i> Chatbot</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Live API / Webhook traffic console logs -->
+          <div class="terminal-logs-card" style="margin-top: 32px;">
+            <div class="terminal-header">
+              <div class="terminal-header-title" style="display: flex; align-items: center; gap: 8px;">
+                <span class="status-indicator online"></span>
+                <h3 style="font-family: var(--font-family-title); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Live Meta API & Webhook logs (+91 9007378887)</h3>
+              </div>
+              <button class="btn btn-small btn-secondary" id="btn-clear-logs">Clear Console</button>
+            </div>
+            <div class="terminal-body" id="terminal-logs-body">
+              <!-- Logs populated via js polling -->
+            </div>
+          </div>
+        </section>
+        
+        <!-- 2. INBOX VIEW (SHARED INBOX + SIMULATOR) -->
+        <section id="tab-inbox" class="tab-panel">
+          <div class="inbox-layout">
+            
+            <!-- Thread List -->
+            <div class="thread-list">
+              <div class="thread-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="chat-search-input" placeholder="Search chats (Anirban, Priyanka, Rahul)...">
+              </div>
+              <div class="threads-container">
+                <div class="thread-item active" data-customer-id="anirban">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Customer" class="avatar">
+                  <div class="thread-details">
+                    <div class="thread-meta">
+                      <h4 class="customer-name">Anirban Chatterjee</h4>
+                      <span class="message-time">Just now</span>
+                    </div>
+                    <div class="thread-preview">
+                      <p id="thread-preview-anirban">Adding Daab Chingri to cart...</p>
+                      <span class="unread-badge">1</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="thread-item" data-customer-id="priyanka">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Customer" class="avatar">
+                  <div class="thread-details">
+                    <div class="thread-meta">
+                      <h4 class="customer-name">Priyanka Sen</h4>
+                      <span class="message-time">10m ago</span>
+                    </div>
+                    <div class="thread-preview">
+                      <p>Is the Bhapa Ilish prepared with mild mustard seeds?</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="thread-item" data-customer-id="rahul">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Customer" class="avatar">
+                  <div class="thread-details">
+                    <div class="thread-meta">
+                      <h4 class="customer-name">Rahul Banerjee</h4>
+                      <span class="message-time">1h ago</span>
+                    </div>
+                    <div class="thread-preview">
+                      <p>Order #W-9840 has been dispatched! Delivery executive is on the way.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Chat Pane (Merchant Side) -->
+            <div class="chat-pane">
+              <div class="chat-header">
+                <div class="chat-customer-info">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Customer" class="avatar" id="chat-header-avatar">
+                  <div>
+                    <h3 id="chat-header-name">Anirban Chatterjee</h3>
+                    <span class="active-status"><span class="status-indicator online"></span> Active In Shopbot Flow</span>
+                  </div>
+                </div>
+                
+                <div class="chat-actions" style="display: flex; gap: 8px;">
+                  <button class="btn btn-secondary-icon active" title="Toggle CRM Profile" id="btn-toggle-crm">
+                    <i class="fa-solid fa-id-card"></i>
+                    <span>Profile</span>
+                  </button>
+                  <button class="btn btn-secondary-icon active" title="Toggle Phone Simulator" id="btn-toggle-sim">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Simulator</span>
+                  </button>
+                  <button class="btn btn-secondary-icon" title="Takeover from Bot" id="btn-takeover">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Take Over</span>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Chat Messages Container -->
+              <div class="chat-messages" id="merchant-messages-container">
+                <!-- Messages will be populated by app.js -->
+              </div>
+              
+              <!-- AI Agent Copilot Panel -->
+              <div class="ai-copilot-panel">
+                <div class="ai-copilot-header">
+                  <div class="ai-sentiment-indicator">
+                    <span class="ai-pill-tag"><i class="fa-solid fa-robot"></i> AI Copilot</span>
+                    <div id="ai-customer-sentiment" class="sentiment-pill positive">
+                      <i class="fa-solid fa-face-smile" id="ai-sentiment-icon"></i>
+                      <span id="ai-sentiment-text">Delighted (95%) • Browsing Specials</span>
+                    </div>
+                  </div>
+                  <div class="ai-quick-tools">
+                    <button class="btn-ai-tool" id="btn-ai-summarize-notes" title="Auto-summarize conversation into CRM profile notes">
+                      <i class="fa-solid fa-feather"></i> 1-Click AI Summarize to Notes
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Tone Selector Pills -->
+                <div class="ai-tone-bar">
+                  <span class="tone-label"><i class="fa-solid fa-sliders"></i> Tone:</span>
+                  <button class="btn-tone active" data-tone="bengali">🌺 Bengali</button>
+                  <button class="btn-tone" data-tone="upsell">🍲 Gourmet Upsell</button>
+                  <button class="btn-tone" data-tone="empathy">🤝 Care & Delight</button>
+                  <button class="btn-tone" data-tone="formal">👔 Executive</button>
+                  <button class="btn-generate-tone" id="btn-apply-ai-draft"><i class="fa-solid fa-wand-magic-sparkles"></i> Draft Reply</button>
+                </div>
+
+                <!-- Dynamic AI Smart Reply Suggestions -->
+                <div class="ai-smart-replies" id="ai-smart-replies-list">
+                  <button class="smart-reply-pill">🍤 Daab Chingri is our signature delicacy! Shall I send the one-click checkout link?</button>
+                  <button class="smart-reply-pill">🎉 Order 2 portions today and get complimentary Mishti Doi & Chhanar Payesh!</button>
+                  <button class="smart-reply-pill">🛵 We can deliver to Gariahat within 35 minutes piping hot.</button>
+                </div>
+              </div>
+
+              <!-- Chat Input / Quick Actions Panel -->
+              <div class="chat-input-panel">
+                <div class="quick-utilities">
+                  <div class="util-dropdown">
+                    <button class="btn btn-small btn-secondary" id="btn-templates-dropdown">
+                      <i class="fa-solid fa-wand-magic-sparkles"></i> Templates
+                    </button>
+                    <div class="dropdown-menu" id="templates-menu">
+                      <a href="#" data-template="welcome">👋 Send Welcome Flow</a>
+                      <a href="#" data-template="flash_sale">🔥 Send Sunday Feast (20%)</a>
+                      <a href="#" data-template="payment_reminder">💳 Send Dining Invoice</a>
+                      <a href="#" data-template="share_tracker">🚚 Share Live Tracker Link</a>
+                    </div>
+                  </div>
+                  
+                  <div class="util-dropdown">
+                    <button class="btn btn-small btn-secondary" id="btn-push-catalog">
+                      <i class="fa-solid fa-box-open"></i> Send Product
+                    </button>
+                    <div class="dropdown-menu" id="push-products-menu">
+                      <!-- Populated dynamically from catalog -->
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="message-input-wrapper">
+                  <textarea id="merchant-reply-input" placeholder="Type a message... (Enter to send, Shift+Enter for new line)"></textarea>
+                  <button class="btn btn-primary btn-icon" id="btn-send-merchant-reply">
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Customer CRM Drawer -->
+            <div class="crm-drawer" id="crm-drawer">
+              <div class="crm-header">
+                <h3>Customer Profile</h3>
+              </div>
+              <div class="crm-profile-summary">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" alt="Customer" class="avatar large" id="crm-avatar">
+                <h4 id="crm-name">Anirban Chatterjee</h4>
+                <p id="crm-phone">+91 98300 12345</p>
+                <div class="crm-badges">
+                  <span class="badge badge-ltv">LTV: ₹3,280.00</span>
+                  <span class="badge badge-orders">3 Orders</span>
+                </div>
+              </div>
+              
+              <div class="crm-details-section">
+                <div class="detail-item">
+                  <span class="detail-label">Active State</span>
+                  <span class="detail-value text-accent" id="crm-active-state">STATE_SHOPPING</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Delivery Address</span>
+                  <span class="detail-value" id="crm-address">Flat 4B, 12 Gariahat Road, Kolkata, WB 700019</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Internal Notes</span>
+                  <textarea class="crm-notes" placeholder="Add private notes about this customer...">Prefers standard spice levels.</textarea>
+                </div>
+              </div>
+            </div>
+            
+            <!-- --------------------------------------------------------------------- -->
+            <!-- CUSTOMER PHONE SIMULATOR (DOCKABLE ON THE RIGHT IN CHAT VIEW) -->
+            <!-- --------------------------------------------------------------------- -->
+            <div class="simulator-wrapper" id="simulator-wrapper">
+              <div class="simulator-label">
+                <i class="fa-solid fa-mobile-screen-button"></i> Customer WhatsApp Simulator
+              </div>
+              <div class="iphone-mockup">
+                <div class="iphone-screen">
+                  
+                  <!-- iOS Top Bar -->
+                  <div class="iphone-header">
+                    <span class="time">9:41</span>
+                    <div class="camera-island"></div>
+                    <div class="icons">
+                      <i class="fa-solid fa-signal"></i>
+                      <i class="fa-solid fa-wifi"></i>
+                      <i class="fa-solid fa-battery-three-quarters"></i>
+                    </div>
+                  </div>
+                  
+                  <!-- WhatsApp Chat App Header -->
+                  <div class="wa-header">
+                    <div class="wa-back-btn">
+                      <i class="fa-solid fa-chevron-left"></i>
+                      <span class="wa-unread-badge">3</span>
+                    </div>
+                    <div class="wa-profile">
+                      <div class="wa-avatar-wrapper">
+                        <i class="fa-brands fa-whatsapp wa-logo-avatar"></i>
+                      </div>
+                      <div class="wa-store-details">
+                        <span class="wa-store-name">6 Ballygunge Place <i class="fa-solid fa-circle-check wa-verified"></i></span>
+                        <span class="wa-store-status">online</span>
+                      </div>
+                    </div>
+                    <div class="wa-header-icons">
+                      <i class="fa-solid fa-video"></i>
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                  </div>
+                  
+                  <!-- WhatsApp Chat Message Log -->
+                  <div class="wa-chat-body" id="wa-messages-log">
+                    <!-- WhatsApp dialogue will render dynamically here -->
+                  </div>
+                  
+                  <!-- WhatsApp Footer Input -->
+                  <div class="wa-footer">
+                    <i class="fa-solid fa-plus wa-plus-icon"></i>
+                    <div class="wa-input-container">
+                      <input type="text" id="wa-user-input" placeholder="Type a message...">
+                      <i class="fa-regular fa-face-smile wa-emoji-icon"></i>
+                    </div>
+                    <button class="wa-voice-btn" id="btn-send-wa-message">
+                      <i class="fa-solid fa-paper-plane" id="wa-send-icon"></i>
+                    </button>
+                  </div>
+                  
+                  <!-- Interactive Quick Catalog Modal (Simulated WhatsApp In-App Catalog overlay) -->
+                  <div class="wa-catalog-modal" id="wa-catalog-modal">
+                    <div class="wa-catalog-header">
+                      <button id="btn-close-wa-catalog"><i class="fa-solid fa-xmark"></i></button>
+                      <h3>Dining Catalog</h3>
+                      <button id="btn-wa-view-cart" class="cart-btn-indicator">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="badge" id="wa-cart-badge">0</span>
+                      </button>
+                    </div>
+                    <div class="wa-catalog-products" id="wa-catalog-products-container">
+                      <!-- Render products inside WhatsApp overlay -->
+                    </div>
+                  </div>
+                  
+                  <!-- Interactive Shopping Cart Modal -->
+                  <div class="wa-cart-modal" id="wa-cart-modal">
+                    <div class="wa-cart-header">
+                      <button id="btn-close-wa-cart"><i class="fa-solid fa-chevron-left"></i></button>
+                      <h3>Your Cart</h3>
+                    </div>
+                    <div class="wa-cart-items" id="wa-cart-items-container">
+                      <!-- Cart list -->
+                    </div>
+                    <div class="wa-cart-footer">
+                      <div class="wa-cart-total">
+                        <span>Total</span>
+                        <strong id="wa-cart-total-val">₹0.00</strong>
+                      </div>
+                      <button class="btn btn-wa-checkout" id="btn-wa-confirm-order">Send Dining Order</button>
+                    </div>
+                  </div>
+                  
+                  <!-- Interactive Payment Gateway Modal (Mock Stripe payment checkout inside simulator) -->
+                  <div class="wa-payment-modal" id="wa-payment-modal">
+                    <div class="payment-modal-content">
+                      <div class="payment-brand">
+                        <i class="fa-solid fa-credit-card"></i> 6BP Pay
+                      </div>
+                      <h4>Secured Dining Checkout</h4>
+                      <div class="payment-amount" id="pay-modal-amount">₹0.00</div>
+                      <div class="payment-card-input">
+                        <label>Card / UPI Details</label>
+                        <div class="mock-input">••••  ••••  ••••  4242 <span class="card-expiry">12/29</span></div>
+                      </div>
+                      <button class="btn btn-pay-confirm" id="btn-pay-submit">Pay Securely</button>
+                      <button class="btn btn-pay-cancel" id="btn-pay-cancel">Cancel</button>
+                    </div>
+                  </div>
+                  
+                  <!-- Home Indicator bar on iPhone -->
+                  <div class="iphone-home-indicator"></div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- 2.5 OUTLET COLLECTIONS VIEW (MULTI-BRANCH DAILY REGISTER & AUDIT) -->
+        <section id="tab-outlets" class="tab-panel">
+          <div class="outlets-dashboard-header">
+            <div class="outlets-header-info">
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px;">
+                <h3 style="margin-bottom: 0;">Multi-Outlet Daily Collection & Settlement Tracker</h3>
+                <span class="badge badge-branch-tag" id="active-branch-indicator" style="background: rgba(218, 165, 32, 0.15); color: var(--primary-color); border: 1px solid rgba(218, 165, 32, 0.3); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 14px; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-store"></i> <span id="active-branch-name-text">Consolidated (All 6 Branches)</span>
+                </span>
+              </div>
+              <p id="outlets-header-desc">Real-time cross-branch cash in drawer, UPI, POS cards, and shift closing audits across Kolkata.</p>
+            </div>
+            <div class="outlets-header-actions">
+              <button class="btn btn-secondary" id="btn-broadcast-eod-report">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> Broadcast EOD Report to WhatsApp
+              </button>
+              <button class="btn btn-primary" id="btn-open-record-shift">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Record Shift / Close Register
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Branch-Customised Executive Audit Report Section -->
+          <div class="branch-customised-report-container" id="branch-customised-report-container" style="margin-bottom: 24px;">
+            <!-- Populated dynamically by app.js based on selected branch -->
+          </div>
+
+          <!-- Outlet KPI Grid -->
+          <div class="outlet-kpi-grid">
+            <div class="outlet-kpi-card">
+              <div class="kpi-label">Today's Brand Turnover</div>
+              <div class="kpi-val" id="kpi-total-gross">₹6,88,400.00</div>
+              <div class="kpi-sub"><span class="kpi-positive"><i class="fa-solid fa-arrow-trend-up"></i> <span id="kpi-target-pct">104.3%</span></span> of ₹6.60L Daily Goal</div>
+            </div>
+            <div class="outlet-kpi-card">
+              <div class="kpi-label">Cash in Drawer (Physical)</div>
+              <div class="kpi-val" id="kpi-total-cash">₹1,19,700.00</div>
+              <div class="kpi-sub" id="kpi-cash-ratio">17.4% of total collection</div>
+            </div>
+            <div class="outlet-kpi-card">
+              <div class="kpi-label">Digital Payments (UPI + Cards)</div>
+              <div class="kpi-val text-blue" id="kpi-total-digital">₹4,76,200.00</div>
+              <div class="kpi-sub" id="kpi-digital-ratio">69.2% digital adoption</div>
+            </div>
+            <div class="outlet-kpi-card">
+              <div class="kpi-label">Online Portals & WhatsApp</div>
+              <div class="kpi-val text-gold" id="kpi-total-online">₹92,500.00</div>
+              <div class="kpi-sub" id="kpi-online-ratio">13.4% conversational share</div>
+            </div>
+            <div class="outlet-kpi-card">
+              <div class="kpi-label">Net Bank Deposit (Post-Expenses)</div>
+              <div class="kpi-val text-green" id="kpi-total-net">₹6,74,300.00</div>
+              <div class="kpi-sub"><span class="kpi-muted" id="kpi-total-expenses">₹14,100 petty cash deducted</span></div>
+            </div>
+          </div>
+
+          <!-- Payment Split Breakdown Bar -->
+          <div class="collection-split-card">
+            <div class="split-header">
+              <h4>Collection Channels Breakdown (Consolidated)</h4>
+              <div class="split-legend">
+                <span class="legend-item"><span class="dot upi-dot"></span> UPI QR (<span id="legend-upi">₹2.80L / 40.8%</span>)</span>
+                <span class="legend-item"><span class="dot card-dot"></span> EDC Cards (<span id="legend-card">₹1.95L / 28.4%</span>)</span>
+                <span class="legend-item"><span class="dot cash-dot"></span> Cash in Hand (<span id="legend-cash">₹1.19L / 17.4%</span>)</span>
+                <span class="legend-item"><span class="dot online-dot"></span> Swiggy/WhatsApp (<span id="legend-online">₹92.5K / 13.4%</span>)</span>
+              </div>
+            </div>
+            <div class="split-progress-bar">
+              <div class="progress-segment seg-upi" id="seg-upi" style="width: 40.8%;" title="UPI"></div>
+              <div class="progress-segment seg-card" id="seg-card" style="width: 28.4%;" title="Cards"></div>
+              <div class="progress-segment seg-cash" id="seg-cash" style="width: 17.4%;" title="Cash"></div>
+              <div class="progress-segment seg-online" id="seg-online" style="width: 13.4%;" title="Online"></div>
+            </div>
+          </div>
+
+          <!-- Outlet Comparison & Shift Settlement Table -->
+          <div class="outlet-table-card">
+            <div class="card-header">
+              <div>
+                <h3>Branch Daily Collection Register</h3>
+                <p class="subtitle">Detailed breakdown by payment method, petty expense vouchers, and cashier closing audits.</p>
+              </div>
+              <div class="table-quick-stats">
+                <span class="badge badge-settled"><i class="fa-solid fa-circle-check"></i> <span id="badge-settled-count">3</span> Settled</span>
+                <span class="badge badge-pending"><i class="fa-solid fa-clock"></i> <span id="badge-pending-count">1</span> In Audit</span>
+                <span class="badge badge-open"><i class="fa-solid fa-door-open"></i> <span id="badge-open-count">2</span> Open</span>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table outlets-table">
+                <thead>
+                  <tr>
+                    <th>Branch / Outlet</th>
+                    <th>Manager / Cashier</th>
+                    <th>Daily Target</th>
+                    <th>Cash (₹)</th>
+                    <th>UPI (₹)</th>
+                    <th>Cards (₹)</th>
+                    <th>Online (₹)</th>
+                    <th>Gross Total</th>
+                    <th>Expenses</th>
+                    <th>Net Deposit</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="outlets-collection-tbody">
+                  <!-- Rendered dynamically by app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. CATALOG VIEW (eCommerce Catalog Sync & Menu Management) -->
+        <section id="tab-catalog" class="tab-panel">
+          <!-- Meta Cloud & WhatsApp Catalog Sync Telemetry Banner -->
+          <div class="catalog-telemetry-banner">
+            <div class="telemetry-col-main">
+              <div class="telemetry-status-pill">
+                <span class="status-dot pulse-green"></span>
+                <strong>Meta Cloud Commerce: Synced</strong>
+                <span class="telemetry-sub" id="waba-sync-status-time">• Auto-Synced 3 mins ago</span>
+              </div>
+              <div class="telemetry-meta-tags">
+                <span class="t-badge"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WABA ID: <strong>982312093</strong></span>
+                <span class="t-badge"><i class="fa-solid fa-shield-check text-green"></i> <strong>100% Policy Approved</strong></span>
+                <span class="t-badge" id="catalog-active-kitchen-badge"><i class="fa-solid fa-utensils text-gold"></i> <strong id="catalog-kitchen-name">All 6 Kitchens Live</strong></span>
+              </div>
+            </div>
+            <div class="telemetry-stats-group">
+              <div class="telemetry-stat">
+                <span class="tstat-val" id="catalog-stat-total-skus">12</span>
+                <span class="tstat-lbl">Active Dishes</span>
+              </div>
+              <div class="telemetry-stat">
+                <span class="tstat-val text-green" id="catalog-stat-in-stock">12</span>
+                <span class="tstat-lbl">Kitchen Live</span>
+              </div>
+              <div class="telemetry-stat">
+                <span class="tstat-val text-blue">25m</span>
+                <span class="tstat-lbl">Avg Prep Time</span>
+              </div>
+            </div>
+            <div class="telemetry-actions">
+              <button class="btn btn-secondary" id="btn-sync-meta-catalog">
+                <i class="fa-solid fa-arrows-rotate"></i> Sync Meta WABA
+              </button>
+              <button class="btn btn-primary" id="btn-add-product">
+                <i class="fa-solid fa-plus"></i> Add New Dish
+              </button>
+            </div>
+          </div>
+
+          <!-- Catalog Filter, Search & Sorting Toolbar -->
+          <div class="catalog-toolbar">
+            <!-- Search bar -->
+            <div class="catalog-search-wrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="catalog-search-input" placeholder="Search dishes by title, ingredients, or SKU (e.g. Ilish, Chingri, BENG-)...">
+              <button id="btn-clear-catalog-search" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- Dietary Toggle (All / Non-Veg / Pure Veg) -->
+            <div class="catalog-dietary-toggle">
+              <button class="dietary-btn active" data-dietary="all">All</button>
+              <button class="dietary-btn" data-dietary="nonveg">
+                <span class="dietary-dot nonveg"></span> Non-Veg
+              </button>
+              <button class="dietary-btn" data-dietary="veg">
+                <span class="dietary-dot veg"></span> Pure Veg
+              </button>
+            </div>
+
+            <!-- Sort By Select -->
+            <div class="catalog-sort-wrap">
+              <label for="catalog-sort-select"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort:</label>
+              <select id="catalog-sort-select" class="catalog-select">
+                <option value="recommended">Featured Specialties</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name">Dish Name (A-Z)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Culinary Category Filter Pills -->
+          <div class="catalog-category-pills">
+            <button class="cat-pill active" data-category="all">
+              <i class="fa-solid fa-fire text-gold"></i> All Dishes (<span id="cat-count-all">12</span>)
+            </button>
+            <button class="cat-pill" data-category="signature">
+              <i class="fa-solid fa-crown text-gold"></i> Chef's Signature (<span id="cat-count-sig">4</span>)
+            </button>
+            <button class="cat-pill" data-category="seafood">
+              <i class="fa-solid fa-shrimp" style="color: #F87171;"></i> Fish & Seafood (<span id="cat-count-fish">4</span>)
+            </button>
+            <button class="cat-pill" data-category="meat">
+              <i class="fa-solid fa-drumstick-bite" style="color: #FBBF24;"></i> Mutton & Meat (<span id="cat-count-meat">2</span>)
+            </button>
+            <button class="cat-pill" data-category="thali">
+              <i class="fa-solid fa-bowl-food" style="color: #34D399;"></i> Heritage Thalis (<span id="cat-count-thali">2</span>)
+            </button>
+            <button class="cat-pill" data-category="veg">
+              <i class="fa-solid fa-leaf text-green"></i> Pure Veg (<span id="cat-count-veg">2</span>)
+            </button>
+            <button class="cat-pill" data-category="dessert">
+              <i class="fa-solid fa-ice-cream" style="color: #c084fc;"></i> Bengali Mishti (<span id="cat-count-dessert">2</span>)
+            </button>
+          </div>
+
+          <!-- Results Summary Header -->
+          <div class="catalog-results-header">
+            <span id="catalog-showing-text">Showing <strong>12</strong> of <strong>12</strong> dishes in WhatsApp Catalog</span>
+            <span class="outlet-sync-hint" id="catalog-outlet-hint"><i class="fa-solid fa-circle-check text-green"></i> Kitchen menu live across all 6 Kolkata branch cloud kitchens</span>
+          </div>
+
+          <!-- Catalog Products Grid -->
+          <div class="catalog-grid" id="catalog-products-grid">
+            <!-- Populated via Javascript -->
+          </div>
+
+          <!-- Empty Search State -->
+          <div class="catalog-empty-state" id="catalog-empty-state" style="display: none;">
+            <i class="fa-solid fa-utensils"></i>
+            <h4>No culinary dishes match your filter</h4>
+            <p>Try searching for a different dish name, ingredient, or reset your category filters.</p>
+            <button class="btn btn-secondary" id="btn-reset-catalog-filters">Reset All Filters</button>
+          </div>
+        </section>
+        
+        <!-- 4. CAMPAIGNS VIEW -->
+        <section id="tab-campaigns" class="tab-panel">
+          <div class="campaign-dashboard-header">
+            <h3>WhatsApp Template Broadcasts</h3>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-secondary" id="btn-open-ai-campaign">
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary-color);"></i> ✨ Generate with AI
+              </button>
+              <button class="btn btn-primary" id="btn-schedule-campaign">
+                <i class="fa-solid fa-plus"></i> Schedule Campaign
+              </button>
+            </div>
+          </div>
+          
+          <!-- Campaign Stats -->
+          <div class="campaign-stats-row">
+            <div class="cstat-card">
+              <span class="cstat-label">Total Messages Sent</span>
+              <span class="cstat-value">12.4K</span>
+            </div>
+            <div class="cstat-card">
+              <span class="cstat-label">Average Read Rate</span>
+              <span class="cstat-value text-green">89.4%</span>
+            </div>
+            <div class="cstat-card">
+              <span class="cstat-label">Average Reply Rate</span>
+              <span class="cstat-value text-blue">42.1%</span>
+            </div>
+            <div class="cstat-card">
+              <span class="cstat-label">Total Revenue Driven</span>
+              <span class="cstat-value text-gold">₹2,84,500.00</span>
+            </div>
+          </div>
+          
+          <!-- Campaign List -->
+          <div class="campaigns-list-wrapper">
+            <h3>Recent Broadcasts</h3>
+            <div class="campaign-list" id="campaigns-container">
+              
+              <div class="campaign-row">
+                <div class="campaign-info">
+                  <h4>🔥 Sunday Heritage Feast Sale (Approved Template)</h4>
+                  <p>Sent to: <strong>All Active Customers (412 users)</strong> • Jul 24, 2026</p>
+                </div>
+                <div class="campaign-performance">
+                  <div class="perf-metric">
+                    <span class="num">412</span>
+                    <span class="lbl">Sent</span>
+                  </div>
+                  <div class="perf-metric">
+                    <span class="num text-green">94%</span>
+                    <span class="lbl">Read</span>
+                  </div>
+                  <div class="perf-metric">
+                    <span class="num text-blue">52%</span>
+                    <span class="lbl">Replied</span>
+                  </div>
+                </div>
+                <div class="campaign-status-col">
+                  <span class="status-badge paid">Completed</span>
+                </div>
+              </div>
+              
+              <div class="campaign-row">
+                <div class="campaign-info">
+                  <h4>👋 Cart Abandonment Flow</h4>
+                  <p>Triggered on: <strong>Cart idle > 2 hours</strong> • Automated Campaign</p>
+                </div>
+                <div class="campaign-performance">
+                  <div class="perf-metric">
+                    <span class="num">184</span>
+                    <span class="lbl">Triggered</span>
+                  </div>
+                  <div class="perf-metric">
+                    <span class="num text-green">87%</span>
+                    <span class="lbl">Read</span>
+                  </div>
+                  <div class="perf-metric">
+                    <span class="num text-gold">24%</span>
+                    <span class="lbl">Recovered</span>
+                  </div>
+                </div>
+                <div class="campaign-status-col">
+                  <span class="status-badge shipped">Running</span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+        </section>
+        
+        <!-- 5. SETTINGS VIEW -->
+        <section id="tab-settings" class="tab-panel">
+          <div class="settings-container">
+            <div class="settings-card">
+              <h3>Meta Cloud API Integration Settings</h3>
+              <p class="settings-subtitle">Manage connection parameters for Meta Business Developer Platform.</p>
+              
+              <div class="settings-form">
+                <div class="form-group">
+                  <label>Connected WhatsApp Business Phone Number</label>
+                  <input type="text" value="+91 9007378887" disabled class="input-disabled" style="color: var(--primary-color) !important; font-weight: 700;">
+                </div>
+                <div class="form-group">
+                  <label>WhatsApp Business Account (WABA) ID</label>
+                  <input type="text" value="waba_act_894320982312093" disabled class="input-disabled">
+                </div>
+                <div class="form-group">
+                  <label>WhatsApp Phone Number ID</label>
+                  <input type="text" value="phone_id_982312480928340" disabled class="input-disabled">
+                </div>
+                <div class="form-group">
+                  <label>Meta Access Token (System User Permanent Token)</label>
+                  <input type="password" value="EAAGm0PX4ZCpsBAK77mB..." disabled class="input-disabled">
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label>Webhook URL (6BP CRM Endpoint)</label>
+                    <input type="text" value="https://api.6ballygungeplace.in/v1/webhooks/whatsapp" disabled class="input-disabled">
+                  </div>
+                  <div class="form-group">
+                    <label>Webhook Verification Token</label>
+                    <input type="text" value="6bp_secure_verify_token_2026" disabled class="input-disabled">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-card">
+              <h3>eCommerce Storefront Sync</h3>
+              <div class="sync-actions-row">
+                <div class="sync-source">
+                  <i class="fa-brands fa-shopify shopify-icon"></i>
+                  <div>
+                    <h4>Shopify Store Connected</h4>
+                    <p>Synced with: <strong>6ballygungeplace.myshopify.com</strong></p>
+                  </div>
+                </div>
+                <button class="btn btn-secondary"><i class="fa-solid fa-arrows-rotate"></i> Sync Products Now</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+  </div>
+  
+  <!-- Add/Edit Product Modal -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="product-modal-title">Add New Product</h3>
+        <button class="modal-close" id="btn-close-product-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="product-form">
+          <div class="form-group">
+            <label for="prod-name">Product Name</label>
+            <input type="text" id="prod-name" required placeholder="e.g. Daab Chingri">
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="prod-category">Culinary Category</label>
+              <select id="prod-category" required>
+                <option value="signature">🌟 Chef's Signature Heritage</option>
+                <option value="seafood">🦐 Fish & Seafood</option>
+                <option value="meat">🥩 Mutton & Meat</option>
+                <option value="thali">🍱 Heritage Thali Feast</option>
+                <option value="veg">🥗 Pure Bengali Veg</option>
+                <option value="dessert">🍨 Bengali Mishti & Dessert</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="prod-dietary">Dietary Classification</label>
+              <select id="prod-dietary" required>
+                <option value="nonveg">🔴 Non-Vegetarian</option>
+                <option value="veg">🟢 Pure Vegetarian</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="prod-price">Price (₹ INR)</label>
+              <input type="number" id="prod-price" step="1" required placeholder="e.g. 645">
+            </div>
+            <div class="form-group">
+              <label for="prod-sku">SKU Code</label>
+              <input type="text" id="prod-sku" required placeholder="e.g. BENG-DAAB-01">
+            </div>
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="prod-prep">Kitchen Preparation Time</label>
+              <input type="text" id="prod-prep" placeholder="e.g. 25 mins" value="25 mins">
+            </div>
+            <div class="form-group">
+              <label for="prod-stock">Initial Stock Status</label>
+              <select id="prod-stock">
+                <option value="in_stock">🟢 In Stock (Active on WABA)</option>
+                <option value="low_stock">🟡 Low Stock</option>
+                <option value="out_of_stock">🔴 Sold Out</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="prod-image">Image URL</label>
+            <input type="url" id="prod-image" required placeholder="https://images.unsplash.com/..." value="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&auto=format&fit=crop&q=80">
+          </div>
+          <div class="form-group">
+            <label for="prod-desc">Description & Ingredients</label>
+            <textarea id="prod-desc" required placeholder="Describe traditional Bengali preparation, gravy, and aroma..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-brands fa-whatsapp"></i> Sync Product to Meta WABA Catalog</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Edit Product Modal -->
+  <div class="modal" id="edit-product-modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 id="edit-product-modal-title"><i class="fa-solid fa-pen-to-square" style="color: var(--primary-color);"></i> Edit Dish Details</h3>
+        <button class="modal-close" id="btn-close-edit-product-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-product-form">
+          <input type="hidden" id="edit-prod-id">
+          <div class="form-group">
+            <label for="edit-prod-name">Dish Title</label>
+            <input type="text" id="edit-prod-name" required>
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="edit-prod-price">Selling Price (₹ INR)</label>
+              <input type="number" id="edit-prod-price" step="1" required>
+            </div>
+            <div class="form-group">
+              <label for="edit-prod-stock">Kitchen Stock Status</label>
+              <select id="edit-prod-stock" required>
+                <option value="in_stock">🟢 In Stock (Available)</option>
+                <option value="low_stock">🟡 Low Stock (&lt;10 left)</option>
+                <option value="out_of_stock">🔴 Sold Out (Closed)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-prod-desc">Description</label>
+            <textarea id="edit-prod-desc" rows="3"></textarea>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 20px;">
+            <button type="button" class="btn btn-secondary" id="btn-cancel-edit-prod" style="flex: 1;">Cancel</button>
+            <button type="submit" class="btn btn-primary" style="flex: 1;"><i class="fa-solid fa-check"></i> Save & Sync to Meta</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shift Close & Daily Collection Modal -->
+  <div class="modal" id="record-shift-modal">
+    <div class="modal-content" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 id="record-shift-modal-title"><i class="fa-solid fa-cash-register" style="color: var(--primary-color);"></i> Record Shift / Daily Collection</h3>
+        <button class="modal-close" id="btn-close-record-shift-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="record-shift-form">
+          <div class="form-group">
+            <label for="shift-outlet-select">Select Branch / Outlet</label>
+            <select id="shift-outlet-select" required>
+              <option value="outlet_ballygunge">Ballygunge Flagship (6 Ballygunge Place)</option>
+              <option value="outlet_saltlake">Salt Lake (Sector V IT Hub)</option>
+              <option value="outlet_parkstreet">Park Street Heritage</option>
+              <option value="outlet_southcity">South City Mall</option>
+              <option value="outlet_newtown">New Town (Action Area 1)</option>
+              <option value="outlet_whatsapp">WhatsApp Direct & Central Cloud Hub</option>
+            </select>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="shift-cash">Physical Cash in Drawer (₹)</label>
+              <input type="number" id="shift-cash" min="0" step="1" required placeholder="e.g. 38400">
+            </div>
+            <div class="form-group">
+              <label for="shift-upi">UPI & QR Settlements (₹)</label>
+              <input type="number" id="shift-upi" min="0" step="1" required placeholder="e.g. 56200">
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="shift-card">EDC POS Cards (₹)</label>
+              <input type="number" id="shift-card" min="0" step="1" required placeholder="e.g. 42800">
+            </div>
+            <div class="form-group">
+              <label for="shift-online">Online / Swiggy / WhatsApp (₹)</label>
+              <input type="number" id="shift-online" min="0" step="1" required placeholder="e.g. 18400">
+            </div>
+          </div>
+
+          <!-- Denomination Breakdown Box -->
+          <div class="denomination-box">
+            <div class="denomination-header">
+              <span><i class="fa-solid fa-money-bill-1-wave"></i> Cash Denominations Breakdown</span>
+              <span class="denom-calc" id="denom-calc-total">₹0</span>
+            </div>
+            <div class="denomination-grid">
+              <div class="denom-item">
+                <span>₹500 ×</span>
+                <input type="number" id="denom-500" min="0" placeholder="0" class="denom-input">
+              </div>
+              <div class="denom-item">
+                <span>₹200 ×</span>
+                <input type="number" id="denom-200" min="0" placeholder="0" class="denom-input">
+              </div>
+              <div class="denom-item">
+                <span>₹100 ×</span>
+                <input type="number" id="denom-100" min="0" placeholder="0" class="denom-input">
+              </div>
+              <div class="denom-item">
+                <span>Coins ×</span>
+                <input type="number" id="denom-coins" min="0" placeholder="0" class="denom-input">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group-row" style="margin-top: 14px;">
+            <div class="form-group">
+              <label for="shift-expenses">Petty Cash Deductions (₹)</label>
+              <input type="number" id="shift-expenses" min="0" step="1" placeholder="e.g. 4200">
+            </div>
+            <div class="form-group">
+              <label for="shift-status">Shift Closing Status</label>
+              <select id="shift-status">
+                <option value="settled">Settled & Audited (Registers Closed)</option>
+                <option value="pending_audit">Pending Manager Audit</option>
+                <option value="open">Open (Shift Still In Progress)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="shift-settled-by">Cashier / Manager Name</label>
+            <input type="text" id="shift-settled-by" placeholder="e.g. Joydeep Sen (General Manager)">
+          </div>
+
+          <div class="form-group">
+            <label for="shift-notes">Shift Closing Notes & Remarks</label>
+            <textarea id="shift-notes" placeholder="e.g. Pujor special advance bookings received. Fresh Daab coconut batch replenished..."></textarea>
+          </div>
+
+          <div class="shift-live-total-bar">
+            <div>
+              <span>Calculated Gross:</span>
+              <strong id="shift-modal-gross">₹0.00</strong>
+            </div>
+            <div>
+              <span>Net Bank Deposit:</span>
+              <strong id="shift-modal-net" style="color: var(--color-sales);">₹0.00</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-submit-shift-record">
+            <i class="fa-solid fa-check-double"></i> Save & Audit Daily Register
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Campaign Generator Modal -->
+  <div class="modal" id="ai-campaign-modal">
+    <div class="modal-content" style="max-width: 560px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary-color);"></i> ✨ AI Campaign Copy Generator</h3>
+        <button class="modal-close" id="btn-close-ai-campaign-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="ai-campaign-form">
+          <div class="form-group">
+            <label for="ai-camp-occasion">Festival / Occasion Theme</label>
+            <input type="text" id="ai-camp-occasion" placeholder="e.g. Poila Boishakh, Sunday Heritage Feast, Jamai Shasthi" value="Sunday Heritage Feast">
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="ai-camp-discount">Special Offer / Discount</label>
+              <select id="ai-camp-discount">
+                <option value="20%">20% OFF Signature Dishes</option>
+                <option value="15%">15% VIP Patron Discount</option>
+                <option value="Buy 2 Get 1">Buy 2 Thalis Get 1 Free</option>
+                <option value="Complimentary Dessert">Free Chhanar Payesh & Mishti Doi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ai-camp-audience">Target Audience</label>
+              <select id="ai-camp-audience">
+                <option value="all">All Active Subscribers (412 guests)</option>
+                <option value="gariahart">South Kolkata Regulars</option>
+                <option value="saltlake">Salt Lake IT Sector</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-secondary btn-block" id="btn-generate-ai-copy" style="margin-bottom: 16px;">
+            <i class="fa-solid fa-brain"></i> Generate High-Converting Copy
+          </button>
+
+          <div class="form-group">
+            <label>AI Generated WhatsApp Broadcast Copy</label>
+            <textarea id="ai-camp-preview-text" rows="7" style="font-size: 13px; font-family: monospace;"></textarea>
+          </div>
+
+          <div class="ai-camp-metrics">
+            <span><i class="fa-solid fa-eye text-green"></i> Est. Read Rate: <strong>92.6%</strong></span>
+            <span><i class="fa-solid fa-cart-shopping text-gold"></i> Est. Conversion: <strong>14.8%</strong></span>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block" id="btn-broadcast-ai-campaign" style="margin-top: 14px;">
+            <i class="fa-solid fa-paper-plane"></i> Broadcast Instantly via WhatsApp API
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- EOD WhatsApp Broadcast Preview Modal -->
+  <div class="modal" id="eod-preview-modal">
+    <div class="modal-content" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp EOD Executive Report</h3>
+        <button class="modal-close" id="btn-close-eod-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="eod-phone-preview" id="eod-phone-preview-text" style="white-space: pre-wrap; background: #0c1c14; border: 1px solid rgba(37,211,102,0.25); border-radius: 8px; padding: 14px; font-size: 13px; line-height: 1.5; color: #e2fbe8; font-family: monospace; margin-bottom: 16px;">
+        </div>
+        <div class="form-group">
+          <label for="eod-recipient-phone">Director / Management WhatsApp Number</label>
+          <input type="text" id="eod-recipient-phone" value="+91 90073 78887">
+        </div>
+        <button class="btn btn-primary btn-block" id="btn-confirm-eod-broadcast" style="background: #25D366; border-color: #25D366; color: #000; font-weight: 700;">
+          <i class="fa-solid fa-paper-plane"></i> Send EOD Report to WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Interactive WhatsApp Message Templates Modal -->
+  <div class="modal" id="templates-modal">
+    <div class="modal-content" style="max-width: 680px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(37, 211, 102, 0.15); display: flex; align-items: center; justify-content: center;">
+            <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 20px;"></i>
+          </div>
+          <div>
+            <h3 style="margin: 0; font-size: 16px;">Meta Approved WhatsApp Templates</h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Instant 1-click dispatch to <strong id="template-target-customer" style="color: #fff;">Customer</strong></span>
+          </div>
+        </div>
+        <button class="modal-close" id="btn-close-templates-modal">&times;</button>
+      </div>
+      <div class="modal-body" style="max-height: 520px; overflow-y: auto; padding: 16px 20px;">
+        <div class="templates-grid" style="display: flex; flex-direction: column; gap: 14px;">
+          
+          <!-- Template 1: Order Tracking -->
+          <div class="template-card" data-template="share_tracker" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px;">🚚 UTILITY</span>
+                <strong style="color: #fff; font-size: 14px;">Live Order Tracker Link</strong>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #10B981; font-size: 11px;"><i class="fa-solid fa-circle-check"></i> Meta Approved</span>
+            </div>
+            <div style="font-size: 12px; color: #cbd5e1; line-height: 1.5; margin: 0 0 10px 0; font-family: monospace; background: #0c1c14; border: 1px solid rgba(37,211,102,0.2); padding: 10px 12px; border-radius: 6px;">
+              🚚 *6 Ballygunge Place - Order Tracker*<br>Here is your live tracking link:<br>🔗 http://localhost:8080/success.html?customerId=anirban&trackingId=6BP-TRK-860115<br>Status: *Preparing your meal with royal spices* • Est. Delivery: *25 minutes*
+            </div>
+            <button class="btn btn-small btn-primary btn-dispatch-template" data-template="share_tracker" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Send Order Tracker Template
+            </button>
+          </div>
+
+          <!-- Template 2: Welcome Flow -->
+          <div class="template-card" data-template="welcome" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: rgba(218, 165, 32, 0.15); color: var(--primary-color); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px;">👋 MARKETING</span>
+                <strong style="color: #fff; font-size: 14px;">Welcome & Dining Catalog</strong>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #10B981; font-size: 11px;"><i class="fa-solid fa-circle-check"></i> Meta Approved</span>
+            </div>
+            <div style="font-size: 12px; color: #cbd5e1; line-height: 1.5; margin: 0 0 10px 0; font-family: monospace; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 10px 12px; border-radius: 6px;">
+              👋 Welcome to 6 Ballygunge Place! Tap below to browse our authentic Bengali culinary catalog or connect with dining support.<br>
+              <em style="color: var(--text-dark);">Buttons: [View Catalog] [Talk to Agent]</em>
+            </div>
+            <button class="btn btn-small btn-primary btn-dispatch-template" data-template="welcome" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Send Welcome & Catalog Flow
+            </button>
+          </div>
+
+          <!-- Template 3: Sunday Feast Flash Sale -->
+          <div class="template-card" data-template="flash_sale" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: rgba(239, 68, 68, 0.15); color: #f87171; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px;">🔥 PROMO</span>
+                <strong style="color: #fff; font-size: 14px;">Sunday Feast Sale (20% OFF)</strong>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #10B981; font-size: 11px;"><i class="fa-solid fa-circle-check"></i> Meta Approved</span>
+            </div>
+            <div style="font-size: 12px; color: #cbd5e1; line-height: 1.5; margin: 0 0 10px 0; font-family: monospace; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 10px 12px; border-radius: 6px;">
+              🔥 Sunday FEAST SALE! Get 20% off all Grand Bengali Feasts for the next 2 hours only. Tap below to buy!
+            </div>
+            <button class="btn btn-small btn-primary btn-dispatch-template" data-template="flash_sale" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Send Sunday Feast Sale Offer
+            </button>
+          </div>
+
+          <!-- Template 4: Payment Reminder -->
+          <div class="template-card" data-template="payment_reminder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: rgba(168, 85, 247, 0.15); color: #c084fc; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px;">💳 PAYMENT</span>
+                <strong style="color: #fff; font-size: 14px;">Dining Invoice & Secured Payment</strong>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #10B981; font-size: 11px;"><i class="fa-solid fa-circle-check"></i> Meta Approved</span>
+            </div>
+            <div style="font-size: 12px; color: #cbd5e1; line-height: 1.5; margin: 0 0 10px 0; font-family: monospace; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 10px 12px; border-radius: 6px;">
+              💳 6 Ballygunge Place: Your dining order cart checkout is ready. Tap below to complete your secured UPI / Card payment.
+            </div>
+            <button class="btn btn-small btn-primary btn-dispatch-template" data-template="payment_reminder" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Send Payment Invoice Link
+            </button>
+          </div>
+
+          <!-- Template 5: Kitchen Delay Apology & Free Dessert -->
+          <div class="template-card" data-template="kitchen_delay" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px;">⏳ CARE</span>
+                <strong style="color: #fff; font-size: 14px;">Kitchen Rush & Free Dessert Treat</strong>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #10B981; font-size: 11px;"><i class="fa-solid fa-circle-check"></i> Meta Approved</span>
+            </div>
+            <div style="font-size: 12px; color: #cbd5e1; line-height: 1.5; margin: 0 0 10px 0; font-family: monospace; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 10px 12px; border-radius: 6px;">
+              🙏 Dear Guest, our master chefs are preparing your authentic slow-cooked meal with perfection. To thank you for your patience, we have added a complimentary portion of *Baked Rosogolla* to your order on the house! 🍮
+            </div>
+            <button class="btn btn-small btn-primary btn-dispatch-template" data-template="kitchen_delay" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Send Kitchen Care & Free Dessert
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Interactive Send Product Card Modal -->
+  <div class="modal" id="send-product-modal">
+    <div class="modal-content" style="max-width: 760px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(218, 165, 32, 0.15); display: flex; align-items: center; justify-content: center;">
+            <i class="fa-solid fa-box-open" style="color: var(--primary-color); font-size: 18px;"></i>
+          </div>
+          <div>
+            <h3 style="margin: 0; font-size: 16px;">Send Dish Card to WhatsApp</h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Recommend authentic 6 Ballygunge Place delicacies to <strong id="send-product-target-name" style="color: #fff;">Customer</strong></span>
+          </div>
+        </div>
+        <button class="modal-close" id="btn-close-send-product-modal">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 16px 20px;">
+        <!-- Search & Filter Controls -->
+        <div style="display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 220px; position: relative;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 12px; top: 11px; color: var(--text-dark); font-size: 13px;"></i>
+            <input type="text" id="send-product-search" placeholder="Search dish (Daab Chingri, Bhapa Ilish, Kosha Mangsho)..." style="width: 100%; padding: 8px 12px 8px 36px; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-size: 13px; outline: none;">
+          </div>
+          <div style="display: flex; gap: 6px;" id="send-product-dietary-pills">
+            <button class="btn btn-small btn-secondary active send-prod-diet-btn" data-diet="all">All Dishes</button>
+            <button class="btn btn-small btn-secondary send-prod-diet-btn" data-diet="nonveg">🔴 Non-Veg</button>
+            <button class="btn btn-small btn-secondary send-prod-diet-btn" data-diet="veg">🟢 Pure Veg</button>
+          </div>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div id="send-product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; max-height: 480px; overflow-y: auto; padding-right: 4px;">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Script -->
+  <script src="app.js"></script>
+</body>
+</html>

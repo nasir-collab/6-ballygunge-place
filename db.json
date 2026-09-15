@@ -1,0 +1,834 @@
+{
+  "stats": {
+    "sales": 150940,
+    "conversion": 5.4,
+    "sessions": 82,
+    "orderCount": 80
+  },
+  "products": [
+    {
+      "id": "prod1",
+      "name": "Daab Chingri",
+      "category": "signature",
+      "price": 675,
+      "sku": "BENG-DAAB-01",
+      "isVeg": false,
+      "bestseller": true,
+      "prepTime": "25 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 24,
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&auto=format&fit=crop&q=80",
+      "desc": "Tender prawns cooked in a rich mustard and coconut cream blend, served inside a fresh green coconut shell."
+    },
+    {
+      "id": "prod2",
+      "name": "Bhapa Ilish",
+      "category": "signature",
+      "price": 725,
+      "sku": "BENG-ILISH-02",
+      "isVeg": false,
+      "bestseller": true,
+      "prepTime": "30 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 18,
+      "image": "https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=400&auto=format&fit=crop&q=80",
+      "desc": "The queen of fish, Hilsa, steamed to perfection with a sharp, pungent paste of mustard, poppy seeds, and green chilies."
+    },
+    {
+      "id": "prod3",
+      "name": "Kosha Mangsho",
+      "category": "meat",
+      "price": 595,
+      "sku": "BENG-KOSHA-03",
+      "isVeg": false,
+      "bestseller": true,
+      "prepTime": "35 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 30,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&auto=format&fit=crop&q=80",
+      "desc": "Velvet-textured mutton pieces slow-cooked over hours in a thick, spicy, dark gravy of caramelized onions and traditional spices."
+    },
+    {
+      "id": "prod4",
+      "name": "Bhetki Paturi",
+      "category": "signature",
+      "price": 525,
+      "sku": "BENG-PATURI-04",
+      "isVeg": false,
+      "bestseller": false,
+      "prepTime": "20 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 15,
+      "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&auto=format&fit=crop&q=80",
+      "desc": "Fresh fillet of Bhetki marinated in mustard, coconut, and chili paste, wrapped neatly in banana leaf envelopes and steamed."
+    },
+    {
+      "id": "prod5",
+      "name": "Chingri Malai Curry",
+      "category": "seafood",
+      "price": 665,
+      "sku": "BENG-MALAI-05",
+      "isVeg": false,
+      "bestseller": true,
+      "prepTime": "25 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 20,
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&auto=format&fit=crop&q=80",
+      "desc": "Giant golda prawns simmered gently in spiced coconut milk, bay leaves, cardamom, and pure golden ghee."
+    },
+    {
+      "id": "prod6",
+      "name": "Kolkata Mutton Biryani",
+      "category": "meat",
+      "price": 540,
+      "sku": "BENG-BIRY-06",
+      "isVeg": false,
+      "bestseller": true,
+      "prepTime": "30 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 28,
+      "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80",
+      "desc": "Dum cooked fragrant long-grain Basmati with tender goat meat, sweet spiced Kolkata potato, and farm-fresh boiled egg."
+    },
+    {
+      "id": "prod7",
+      "name": "Grand Bengali Non-Veg Thali",
+      "category": "thali",
+      "price": 999,
+      "sku": "BENG-THALI-07",
+      "isVeg": false,
+      "bestseller": true,
+      "prepTime": "35 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 16,
+      "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=400&auto=format&fit=crop&q=80",
+      "desc": "Royal heritage platter: Steamed Gobindobhog rice, Basanti Pulao, Luchi, Shukto, Bhetki Paturi, Kosha Mangsho, Chutney & Rosogolla."
+    },
+    {
+      "id": "prod8",
+      "name": "Royal Seafood Platter",
+      "category": "thali",
+      "price": 1499,
+      "sku": "BENG-SEAFD-08",
+      "isVeg": false,
+      "bestseller": false,
+      "prepTime": "35 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 8,
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&auto=format&fit=crop&q=80",
+      "desc": "Marine banquet feast: Daab Chingri, Bhetki Paturi, Fish Kabiraji, and Chingri Malai Curry served with fragrant saffron rice."
+    },
+    {
+      "id": "prod9",
+      "name": "Dhokar Dalna",
+      "category": "veg",
+      "price": 360,
+      "sku": "BENG-DHOK-09",
+      "isVeg": true,
+      "bestseller": false,
+      "prepTime": "20 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 22,
+      "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&auto=format&fit=crop&q=80",
+      "desc": "Crispy spiced chana dal diamond cakes simmered in a fragrant ginger, cumin, and whole garam masala golden gravy."
+    },
+    {
+      "id": "prod10",
+      "name": "Chanar Dalna",
+      "category": "veg",
+      "price": 395,
+      "sku": "BENG-CHAN-10",
+      "isVeg": true,
+      "bestseller": false,
+      "prepTime": "20 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 19,
+      "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&auto=format&fit=crop&q=80",
+      "desc": "Handmade melt-in-mouth fresh paneer chenna dumplings fried golden and stewed with diced potatoes in rich Bengali gravy."
+    },
+    {
+      "id": "prod11",
+      "name": "Baked Rosogolla",
+      "category": "dessert",
+      "price": 240,
+      "sku": "BENG-ROSO-11",
+      "isVeg": true,
+      "bestseller": true,
+      "prepTime": "15 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 35,
+      "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&auto=format&fit=crop&q=80",
+      "desc": "Kolkata sponge rasgullas enveloped in thick reduced kheer and baked to a caramelized, decadent golden crust."
+    },
+    {
+      "id": "prod12",
+      "name": "Nolen Gurer Ice Cream",
+      "category": "dessert",
+      "price": 220,
+      "sku": "BENG-GUR-12",
+      "isVeg": true,
+      "bestseller": false,
+      "prepTime": "10 mins",
+      "stockStatus": "in_stock",
+      "stockCount": 40,
+      "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&auto=format&fit=crop&q=80",
+      "desc": "Artisanal slow-churned ice cream infused with pure winter date palm jaggery (Nolen Gur) and roasted cashew praline."
+    }
+  ],
+  "customers": {
+    "anirban": {
+      "id": "anirban",
+      "name": "Anirban Chatterjee",
+      "phone": "+91 98300 12345",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80",
+      "ltv": 3280,
+      "ordersCount": 3,
+      "state": "STATE_COMPLETED",
+      "address": "Flat 4B, 12 Gariahat Road, Kolkata, WB 700019",
+      "notes": "Verified High-Value Regular (3 orders). Favors seafood bestsellers (Daab Chingri & Bhapa Ilish). Prefers standard spice balance and delivers to Gariahat Rd.",
+      "cart": [],
+      "chatHistory": [
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "09:30 AM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "customer",
+          "text": "Hi, I want to order some food for family lunch!",
+          "time": "09:31 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "Sure! Here is our signature bestseller:",
+          "time": "09:31 AM",
+          "isProductCard": true,
+          "productId": "prod1"
+        },
+        {
+          "sender": "agent",
+          "text": "Hello, let me know if you need help choosing between Daab Chingri and Chingri Malaikari.",
+          "time": "9:35 AM"
+        },
+        {
+          "sender": "customer",
+          "text": "Talk to Agent",
+          "time": "4:57 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "🤖 Connecting you to Joydeep Sen (Manager). They will reply shortly!",
+          "time": "4:57 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "💳 Secure Payment Invoice\nTotal: *₹999.00*",
+          "time": "5:13 PM",
+          "isTemplate": true,
+          "templateType": "payment_reminder"
+        },
+        {
+          "sender": "bot",
+          "text": "✅ Payment Successful!\n\nThank you, *Anirban Chatterjee*. Your order *#W-1806* has been confirmed.\nOur delivery executive will arrive with your hot meal shortly.",
+          "time": "5:16 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "5:48 PM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "customer",
+          "text": "[Campaign Referral] Sunday Heritage Feast Promo",
+          "time": "6:01 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Thank you for claiming our Sunday Heritage Feast Promo! Please choose one of our exclusive feast packages below to continue:",
+          "time": "6:01 PM",
+          "isTemplate": true,
+          "templateType": "campaign_packages"
+        },
+        {
+          "sender": "bot",
+          "text": "🔥 Sunday FEAST SALE! Get 20% off all Grand Bengali Feasts for the next 2 hours only. Tap below to buy!",
+          "time": "6:01 PM",
+          "isTemplate": true,
+          "templateType": "flash_sale"
+        },
+        {
+          "sender": "bot",
+          "text": "✅ Payment Successful!\n\nThank you, *Anirban Chatterjee*. Your order *#W-2728* for *Grand Bengali Non-Veg Thali* has been confirmed.\nOur delivery executive will arrive with your hot meal shortly.",
+          "time": "6:43 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "Sure! Here is our signature bestseller:",
+          "time": "3:50 PM",
+          "isProductCard": true,
+          "productId": "prod1"
+        },
+        {
+          "sender": "bot",
+          "text": "🔌 *Joydeep Sen* has taken over the chat. Automated assistant is paused.",
+          "time": "4:07 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "🔌 *Joydeep Sen* has taken over the chat. Automated assistant is paused.",
+          "time": "4:07 PM"
+        },
+        {
+          "sender": "customer",
+          "text": "[Campaign Referral] Sunday Heritage Feast Promo",
+          "time": "4:16 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Thank you for claiming our Sunday Heritage Feast Promo! Please choose one of our exclusive feast packages below to continue:",
+          "time": "4:16 PM",
+          "isTemplate": true,
+          "templateType": "campaign_packages"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "4:33 PM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "customer",
+          "text": "Talk to Agent",
+          "time": "4:33 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "🤖 Connecting you to Joydeep Sen (Manager). They will reply shortly!",
+          "time": "4:33 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "💳 Secure Payment Invoice\nTotal: *₹999.00*",
+          "time": "4:33 PM",
+          "isTemplate": true,
+          "templateType": "payment_reminder"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "4:33 PM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "customer",
+          "text": "🛒 Checkout Request: Sent Cart [Daab Chingri, Bhapa Ilish] totaling ₹1370.00",
+          "time": "4:34 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "🤖 Order received for *Daab Chingri, Bhapa Ilish*! Your checkout invoice is ready. Click below to proceed:",
+          "time": "4:34 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "💳 Secure Payment Invoice\nTotal: *₹1370.00*",
+          "time": "4:34 PM",
+          "isTemplate": true,
+          "templateType": "payment_reminder"
+        },
+        {
+          "sender": "bot",
+          "text": "✅ *Payment Successful!*\n\nThank you, *Anirban Chatterjee*. Your order *#W-7355* for *Daab Chingri, Bhapa Ilish* has been confirmed.\n\n🚚 *Delivery Tracking*:\nTracking ID: *6BP-TRK-765223*\nStatus: *Preparing your meal*\nEst. Delivery: *35 minutes*\n\nOur delivery executive will arrive with your hot meal shortly.",
+          "time": "4:34 PM"
+        },
+        {
+          "sender": "customer",
+          "text": "tracking ?",
+          "time": "4:43 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "🚚 *6 Ballygunge Place - Order Tracker*\n\nHere is your live tracking link:\n🔗 http://localhost:8080/success.html?customerId=anirban&trackingId=6BP-TRK-860115\n\nTracking ID: *6BP-TRK-860115*\nStatus: *Preparing your meal*\nEst. Delivery: *35 minutes*",
+          "time": "4:44 PM",
+          "isTemplate": true,
+          "templateType": "share_tracker"
+        },
+        {
+          "sender": "customer",
+          "text": "Where is my order?",
+          "time": "9:16 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "🚚 *6 Ballygunge Place - Order Tracker*\n\nHere is your live tracking link:\n🔗 http://localhost:8080/success.html?customerId=anirban&trackingId=6BP-TRK-860115\n\nTracking ID: *6BP-TRK-860115*\nStatus: *Preparing your meal with royal spices*\nEst. Delivery: *25 minutes*",
+          "time": "9:16 AM",
+          "isTemplate": true,
+          "templateType": "share_tracker"
+        },
+        {
+          "sender": "customer",
+          "text": "Can you recommend some Chingri?",
+          "time": "9:16 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "🍤 *Daab Chingri (₹675)* is our crown jewel specialty! Fresh jumbo prawns simmered inside a tender green coconut with mustard & cream. Here is the direct dish card:",
+          "time": "9:16 AM",
+          "isProductCard": true,
+          "productId": "prod1"
+        },
+        {
+          "sender": "bot",
+          "text": "Sure! Here is our current bestseller:",
+          "time": "9:16 AM",
+          "isProductCard": true,
+          "productId": "prod3"
+        },
+        {
+          "sender": "bot",
+          "text": "🙏 *Kitchen Delay Notice & Complimentary Treat*\n\nDear Guest, our master chefs are preparing your authentic slow-cooked meal with perfection. To thank you for your patience, we have added a complimentary portion of *Baked Rosogolla* to your order on the house! 🍮",
+          "time": "9:17 AM",
+          "isTemplate": true,
+          "templateType": "kitchen_delay"
+        },
+        {
+          "sender": "bot",
+          "text": "Sure! Here is our current bestseller:",
+          "time": "9:18 AM",
+          "isProductCard": true,
+          "productId": "prod1"
+        },
+        {
+          "sender": "agent",
+          "text": "👋 Welcome back! Would you like to check out today's Hilsa Festival and Daab Chingri specials?",
+          "time": "9:18 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "🚚 *6 Ballygunge Place - Order Tracker*\n\nHere is your live tracking link:\n🔗 http://localhost:8080/success.html?customerId=anirban&trackingId=6BP-TRK-860115\n\nTracking ID: *6BP-TRK-860115*\nStatus: *Preparing your meal with royal spices*\nEst. Delivery: *35 minutes*",
+          "time": "9:18 AM",
+          "isTemplate": true,
+          "templateType": "share_tracker"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "9:18 AM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "agent",
+          "text": "👋 Welcome back! Would you like to check out today's Hilsa Festival and Daab Chingri specials?",
+          "time": "9:29 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "9:29 AM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        }
+      ]
+    },
+    "priyanka": {
+      "id": "priyanka",
+      "name": "Priyanka Sen",
+      "phone": "+91 90070 98765",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
+      "ltv": 999,
+      "ordersCount": 1,
+      "state": "STATE_COMPLETED",
+      "address": "Ballygunge Circular Road, Building 5A, Kolkata, WB 700019",
+      "notes": "Asked about gluten-free/allergy details on mustard gravy.",
+      "cart": [],
+      "chatHistory": [
+        {
+          "sender": "customer",
+          "text": "Is the Bhapa Ilish prepared with white mustard or black mustard? I prefer a milder flavor.",
+          "time": "09:10 AM"
+        },
+        {
+          "sender": "agent",
+          "text": "Yes, we blend mild white mustard seeds with coconut to soften the pungency.",
+          "time": "9:14 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "5:52 PM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "customer",
+          "text": "Hi",
+          "time": "7:22 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "7:22 PM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "customer",
+          "text": "🛒 Checkout Request: Sent Cart [Daab Chingri, Bhapa Ilish] totaling ₹1370.00",
+          "time": "7:23 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "🤖 Order received for *Daab Chingri, Bhapa Ilish*! Your checkout invoice is ready. Click below to proceed:",
+          "time": "7:23 PM"
+        },
+        {
+          "sender": "bot",
+          "text": "💳 Secure Payment Invoice\nTotal: *₹1370.00*",
+          "time": "7:23 PM",
+          "isTemplate": true,
+          "templateType": "payment_reminder"
+        },
+        {
+          "sender": "bot",
+          "text": "✅ *Payment Successful!*\n\nThank you, *Priyanka Sen*. Your order *#W-7079* for *Daab Chingri, Bhapa Ilish* has been confirmed.\n\n🚚 *Delivery Tracking*:\nTracking ID: *6BP-TRK-567207*\nStatus: *Preparing your meal*\nEst. Delivery: *35 minutes*\n\nOur delivery executive will arrive with your hot meal shortly.",
+          "time": "7:23 PM"
+        },
+        {
+          "sender": "agent",
+          "text": "🍤 Your cart is ready with our bestsellers! Shall I send the secure 1-click WhatsApp payment link?",
+          "time": "10:53 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "🔥 Sunday FEAST SALE! Get 20% off all Grand Bengali Feasts for the next 2 hours only. Tap below to buy!",
+          "time": "10:53 AM",
+          "isTemplate": true,
+          "templateType": "flash_sale"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "10:53 AM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        }
+      ]
+    },
+    "rahul": {
+      "id": "rahul",
+      "name": "Rahul Banerjee",
+      "phone": "+91 80170 54321",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
+      "ltv": 2185,
+      "ordersCount": 4,
+      "state": "STATE_WAITING_AGENT",
+      "address": "Sector V, DLF 2, Salt Lake, Kolkata, WB 700091",
+      "notes": "Prefers quick corporate lunch deliveries.",
+      "cart": [],
+      "chatHistory": [
+        {
+          "sender": "bot",
+          "text": "Your order #W-9840 has been dispatched! Delivery executive is on the way. Contact: +91 98830 99211.",
+          "time": "08:00 AM"
+        },
+        {
+          "sender": "bot",
+          "text": "👋 Welcome to 6 Ballygunge Place! Tap the button below to browse our authentic Bengali culinary catalog.",
+          "time": "3:24 PM",
+          "isTemplate": true,
+          "templateType": "welcome"
+        },
+        {
+          "sender": "bot",
+          "text": "🔌 *Joydeep Sen* has taken over the chat. Automated assistant is paused.",
+          "time": "4:07 PM"
+        }
+      ]
+    }
+  },
+  "orders": [
+    {
+      "id": "#W-7079",
+      "customer": "Priyanka Sen",
+      "products": "Daab Chingri, Bhapa Ilish",
+      "status": "paid",
+      "total": "₹1370.00",
+      "source": "chatbot"
+    },
+    {
+      "id": "#W-7355",
+      "customer": "Anirban Chatterjee",
+      "products": "Daab Chingri, Bhapa Ilish",
+      "status": "paid",
+      "total": "₹1370.00",
+      "source": "chatbot"
+    },
+    {
+      "id": "#W-3916",
+      "customer": "Anirban Chatterjee",
+      "products": "Daab Chingri × 2",
+      "status": "paid",
+      "total": "₹1290.00",
+      "source": "chatbot"
+    },
+    {
+      "id": "#W-2728",
+      "customer": "Anirban Chatterjee",
+      "products": "Grand Bengali Non-Veg Thali × 1",
+      "status": "paid",
+      "total": "₹999.00",
+      "source": "chatbot"
+    },
+    {
+      "id": "#W-9842",
+      "customer": "Anirban Chatterjee",
+      "products": "Bhetki Paturi × 2",
+      "status": "paid",
+      "total": "₹1050.00",
+      "source": "chatbot"
+    },
+    {
+      "id": "#W-9841",
+      "customer": "Priyanka Sen",
+      "products": "Kosha Mangsho × 1",
+      "status": "pending",
+      "total": "₹595.00",
+      "source": "agent"
+    },
+    {
+      "id": "#W-9840",
+      "customer": "Rahul Banerjee",
+      "products": "Bhapa Ilish × 3",
+      "status": "shipped",
+      "total": "₹2175.00",
+      "source": "chatbot"
+    }
+  ],
+  "outlets": [
+    {
+      "id": "outlet_ballygunge",
+      "name": "Ballygunge Flagship (6 Ballygunge Place)",
+      "code": "6BP-BLG",
+      "location": "6 Ballygunge Place, Ballygunge, Kolkata 700019",
+      "manager": "Joydeep Sen",
+      "phone": "+91 98300 11221",
+      "targetDaily": 150000,
+      "currentShift": "Evening Dinner Rush",
+      "type": "Dine-in & Heritage Catering",
+      "isFlagship": true
+    },
+    {
+      "id": "outlet_saltlake",
+      "name": "Salt Lake (Sector V IT Hub)",
+      "code": "6BP-SLK",
+      "location": "Block EP & GP, Sector V, Salt Lake, Kolkata 700091",
+      "manager": "Subhasish Roy",
+      "phone": "+91 98301 44552",
+      "targetDaily": 120000,
+      "currentShift": "Corporate Dinner",
+      "type": "Buffet & Express Delivery",
+      "isFlagship": false
+    },
+    {
+      "id": "outlet_parkstreet",
+      "name": "Park Street Heritage",
+      "code": "6BP-PKS",
+      "location": "18 Park Street, Kolkata 700016",
+      "manager": "Debashis Mukherjee",
+      "phone": "+91 98302 77883",
+      "targetDaily": 135000,
+      "currentShift": "Dinner Service",
+      "type": "Fine Dining & Bar",
+      "isFlagship": false
+    },
+    {
+      "id": "outlet_southcity",
+      "name": "South City Mall",
+      "code": "6BP-SCM",
+      "location": "375 Prince Anwar Shah Road, Kolkata 700068",
+      "manager": "Moumita Ghosh",
+      "phone": "+91 98303 99004",
+      "targetDaily": 95000,
+      "currentShift": "Mall Evening Rush",
+      "type": "Express Counter & Takeaway",
+      "isFlagship": false
+    },
+    {
+      "id": "outlet_newtown",
+      "name": "New Town (Action Area 1)",
+      "code": "6BP-NTN",
+      "location": "City Centre II & Eco Park Zone, New Town, Kolkata 700156",
+      "manager": "Arindam Bhattacharya",
+      "phone": "+91 98304 33225",
+      "targetDaily": 85000,
+      "currentShift": "Family Dinner",
+      "type": "Dine-in & Cloud Kitchen",
+      "isFlagship": false
+    },
+    {
+      "id": "outlet_whatsapp",
+      "name": "WhatsApp Direct & Central Cloud Hub",
+      "code": "6BP-WAC",
+      "location": "Central Commissary, Gariahat, Kolkata 700029",
+      "manager": "Amit Roy (Digital Concierge)",
+      "phone": "+91 90073 78887",
+      "targetDaily": 75000,
+      "currentShift": "Active 24/7 Conversational",
+      "type": "Conversational eCommerce & Catering",
+      "isFlagship": false
+    }
+  ],
+  "dailyCollections": [
+    {
+      "id": "COL-20260913-BLG",
+      "outletId": "outlet_ballygunge",
+      "outletName": "Ballygunge Flagship (6 Ballygunge Place)",
+      "date": "2026-09-13",
+      "cash": 38400,
+      "upi": 56200,
+      "card": 42800,
+      "onlineDelivery": 18400,
+      "grossTotal": 155800,
+      "expenses": 4200,
+      "netDeposit": 151600,
+      "target": 150000,
+      "status": "settled",
+      "settledBy": "Joydeep Sen (General Manager)",
+      "settledAt": "10:45 PM",
+      "notes": "Pujor special advance bookings received. Fresh Daab coconut batch replenished.",
+      "denominations": {
+        "100": 8,
+        "200": 18,
+        "500": 68,
+        "coins": 0
+      }
+    },
+    {
+      "id": "COL-20260913-SLK",
+      "outletId": "outlet_saltlake",
+      "outletName": "Salt Lake (Sector V IT Hub)",
+      "date": "2026-09-13",
+      "cash": 22100,
+      "upi": 48500,
+      "card": 34200,
+      "onlineDelivery": 21600,
+      "grossTotal": 126400,
+      "expenses": 2800,
+      "netDeposit": 123600,
+      "target": 120000,
+      "status": "settled",
+      "settledBy": "Subhasish Roy",
+      "settledAt": "10:30 PM",
+      "notes": "Large TCS corporate team buffet booked for Friday.",
+      "denominations": {
+        "100": 7,
+        "200": 12,
+        "500": 38,
+        "coins": 0
+      }
+    },
+    {
+      "id": "COL-20260913-PKS",
+      "outletId": "outlet_parkstreet",
+      "outletName": "Park Street Heritage",
+      "date": "2026-09-13",
+      "cash": 28600,
+      "upi": 51400,
+      "card": 44900,
+      "onlineDelivery": 14200,
+      "grossTotal": 139100,
+      "expenses": 3100,
+      "netDeposit": 136000,
+      "target": 135000,
+      "status": "pending_audit",
+      "settledBy": "Debashis Mukherjee",
+      "settledAt": "10:50 PM",
+      "notes": "Evening rush strong; EDC batch 2 slip reconciliation in progress.",
+      "denominations": {
+        "100": 4,
+        "200": 11,
+        "500": 52,
+        "coins": 0
+      }
+    },
+    {
+      "id": "COL-20260913-SCM",
+      "outletId": "outlet_southcity",
+      "outletName": "South City Mall",
+      "date": "2026-09-13",
+      "cash": 16400,
+      "upi": 41200,
+      "card": 26500,
+      "onlineDelivery": 12800,
+      "grossTotal": 96900,
+      "expenses": 1500,
+      "netDeposit": 95400,
+      "target": 95000,
+      "status": "settled",
+      "settledBy": "Moumita Ghosh",
+      "settledAt": "10:15 PM",
+      "notes": "Weekend family takeaway footfall exceeded expectations.",
+      "denominations": {
+        "100": 4,
+        "200": 10,
+        "500": 28,
+        "coins": 0
+      }
+    },
+    {
+      "id": "COL-20260913-NTN",
+      "outletId": "outlet_newtown",
+      "outletName": "New Town (Action Area 1)",
+      "date": "2026-09-13",
+      "cash": 18500,
+      "upi": 41200,
+      "card": 26000,
+      "onlineDelivery": 16500,
+      "grossTotal": 102200,
+      "expenses": 1200,
+      "netDeposit": 101000,
+      "target": 85000,
+      "status": "settled",
+      "settledBy": "Arindam Bhattacharya",
+      "settledAt": "11:32 PM",
+      "notes": "Evening shift settled and verified by auditor.",
+      "denominations": {
+        "100": 5,
+        "200": 15,
+        "500": 30,
+        "coins": 0
+      }
+    },
+    {
+      "id": "COL-20260913-WAC",
+      "outletId": "outlet_whatsapp",
+      "outletName": "WhatsApp Direct & Central Cloud Hub",
+      "date": "2026-09-13",
+      "cash": 0,
+      "upi": 46500,
+      "card": 24800,
+      "onlineDelivery": 10400,
+      "grossTotal": 81700,
+      "expenses": 600,
+      "netDeposit": 81100,
+      "target": 75000,
+      "status": "open",
+      "settledBy": "Amit Roy (Digital Concierge)",
+      "settledAt": "In Progress",
+      "notes": "Sunday Heritage Feast campaign generated 18 conversational checkouts today.",
+      "denominations": {
+        "100": 0,
+        "200": 0,
+        "500": 0,
+        "coins": 0
+      }
+    }
+  ]
+}
