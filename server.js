@@ -1496,10 +1496,14 @@ function getFormattedTime() {
   return hours + ':' + minutes + ' ' + ampm;
 }
 
-// Start Server listener
+// Start Server listener (local dev only)
 app.listen(PORT, () => {
   console.log(`6 Ballygunge Place Backend Running on http://localhost:${PORT}`);
   console.log(`Database seeded at ${DB_PATH}`);
   // Add a boot log in the webhook logs
   logWebhookTraffic('SYSTEM', 'BOOT_INITIALIZE', { system: '6 Ballygunge Place CRM', state: 'READY', WABA_NUMBER: '+919007378887' });
 });
+
+// Export for Vercel serverless deployment
+module.exports = app;
+
