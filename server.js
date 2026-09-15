@@ -6,8 +6,8 @@ const path = require('path');
 const app = express();
 const PORT = 8080;
 
-// Resolve base directory reliably for both local and Vercel serverless
-const BASE_DIR = process.env.VERCEL ? path.join(process.cwd()) : __dirname;
+// Base directory for resolving static assets (works locally and on Vercel)
+const BASE_DIR = __dirname;
 
 app.use(cors());
 app.use(express.json());
