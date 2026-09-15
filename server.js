@@ -6,13 +6,23 @@ const path = require('path');
 const app = express();
 const PORT = 8080;
 
+// Resolve base directory reliably for both local and Vercel serverless
+const BASE_DIR = process.env.VERCEL ? path.join(process.cwd()) : __dirname;
+
 app.use(cors());
 app.use(express.json());
 
-// Serve frontend static assets from this directory
-app.use(express.static(path.join(__dirname)));
+// Explicit root route — redirect to login page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(BASE_DIR, 'login.html'));
+});
 
-const DB_PATH = path.join(__dirname, 'db.json');
+// Serve all frontend static assets (html, css, js, images)
+app.use(express.static(BASE_DIR));
+
+
+const DB_PATH = path.join(BASE_DIR, 'db.json');
+
 let webhookLogs = []; // Store webhook traffic in memory to display on frontend console
 
 let memoryDb = null; // In-memory database cache for serverless environments
